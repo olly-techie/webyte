@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBTYE AI Admin Control Center</title>
+    <!-- Load Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <!-- Load Lucide Icons for a clean, modern look -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- Sidebar Navigation (Fixed width on desktop, full width on mobile) -->
+        <aside class="glass-card w-full lg:w-64 p-4 lg:p-6 shadow-2xl z-10 lg:min-h-screen">
+            <header class="mb-8 flex items-center justify-between lg:justify-start">
+                <h1 class="text-xl font-bold text-purple-400 tracking-wider">WEBTYE AI</h1>
+                <span class="text-sm font-light text-gray-500 ml-4 hidden lg:block">#33</span>
+                <button class="lg:hidden text-gray-400" onclick="document.getElementById('nav-menu').classList.toggle('hidden')">
+                    <i data-lucide="menu"></i>
+                </button>
+            </header>
+
+            <!-- Navigation Menu -->
+            <nav id="nav-menu" class="hidden lg:block">
+                <ul class="space-y-2">
+                    <!-- Active Item -->
+                    <li class="sidebar-item active-item rounded-lg py-3 px-4 flex items-center cursor-pointer">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                        <span class="font-medium">Overview</span>
+                    </li>
+                    <li class="sidebar-item rounded-lg py-3 px-4 flex items-center cursor-pointer text-gray-400 hover:text-white">
+                        <i data-lucide="users" class="w-5 h-5 mr-3"></i>
+                        <span class="font-medium">User Management</span>
+                    </li>
+                    <li class="sidebar-item rounded-lg py-3 px-4 flex items-center cursor-pointer text-gray-400 hover:text-white">
+                        <i data-lucide="settings" class="w-5 h-5 mr-3"></i>
+                        <span class="font-medium">System Settings</span>
+                    </li>
+                    <li class="sidebar-item rounded-lg py-3 px-4 flex items-center cursor-pointer text-gray-400 hover:text-white">
+                        <i data-lucide="receipt" class="w-5 h-5 mr-3"></i>
+                        <span class="font-medium">Billing</span>
+                    </li>
+                    <li class="sidebar-item rounded-lg py-3 px-4 flex items-center cursor-pointer text-gray-400 hover:text-white">
+                        <i data-lucide="file-text" class="w-5 h-5 mr-3"></i>
+                        <span class="font-medium">Logs</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 lg:p-8">
+            <!-- Header for Mobile -->
+            <header class="lg:hidden mb-4 flex justify-between items-center">
+                <h1 class="text-2xl font-semibold">Admin Control Center</h1>
+                <span class="text-sm font-light text-gray-500">#33</span>
+            </header>
+            
+            <h1 class="text-3xl font-semibold mb-6 hidden lg:block">Admin Control Center</h1>
+
+            <!-- Grid for Dashboard Cards -->
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+                <!-- 1. User Accounts Card -->
+                <div class="glass-card p-6 rounded-xl col-span-1 xl:col-span-1">
+                    <h2 class="text-xl font-semibold mb-4 text-white">User Accounts</h2>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-5xl font-bold text-purple-400">2,450</p>
+                            <p class="text-sm font-light mt-1 text-gray-400">Total Active Users</p>
+                        </div>
+                        
+                        <!-- Radial Progress Bar (78%) -->
+                        <div class="relative w-20 h-20">
+                            <svg class="radial-progress-bar w-full h-full" viewBox="0 0 100 100">
+                                <!-- Background circle (inactive part) -->
+                                <circle class="text-gray-700" stroke-width="8" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                <!-- Foreground circle (active part - 78% of 2*pi*40 = 251.327) -->
+                                <circle class="text-green-400 transition-all duration-1000" stroke-width="8" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"
+                                    stroke-dasharray="251.327" stroke-dashoffset="55.292" stroke-linecap="round"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-lg font-bold text-white">78%</span>
+                            </div>
+                            <p class="text-xs text-center mt-1 pt-10 text-green-400 font-medium">Active</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Recent Activity Log Card (Span 2 columns on desktop) -->
+                <div class="glass-card p-6 rounded-xl col-span-1 xl:col-span-2">
+                    <h2 class="text-xl font-semibold mb-4 text-white">Recent Activity Log</h2>
+                    <p class="text-sm text-gray-500 mb-4">Tap to expand event statement</p>
+                    
+                    <div class="h-64 overflow-y-auto space-y-3">
+                        <!-- Log Item 1 -->
+                        <div class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-4 h-4 mr-2 mt-1 text-green-400 flex-shrink-0"></i>
+                            <p class="text-sm text-gray-300">
+                                <span class="text-xs text-gray-500">[2023-10-25 10:30 AM]</span> User "<span class="font-mono text-xs bg-gray-700 rounded px-1">jdin.der</span>" logged in. System successfully factored reinitialization, revise fix.
+                            </p>
+                        </div>
+                        <!-- Log Item 2 -->
+                        <div class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-4 h-4 mr-2 mt-1 text-purple-400 flex-shrink-0"></i>
+                            <p class="text-sm text-gray-300">
+                                <span class="text-xs text-gray-500">[2023-10-25 10:35 AM]</span> System update triggered: <span class="text-yellow-400">upgrade completed.</span>
+                            </p>
+                        </div>
+                        <!-- Log Item 3 -->
+                        <div class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-4 h-4 mr-2 mt-1 text-green-400 flex-shrink-0"></i>
+                            <p class="text-sm text-gray-300">
+                                <span class="text-xs text-gray-500">[2023-10-26 09:38 AM]</span> User "<span class="font-mono text-xs bg-gray-700 rounded px-1">sdrn.elix</span>" pitch closed custom re-initialised, logged in.
+                            </p>
+                        </div>
+                        <!-- Log Item 4 (New User) -->
+                        <div class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-4 h-4 mr-2 mt-1 text-blue-400 flex-shrink-0"></i>
+                            <p class="text-sm text-gray-300">
+                                <span class="text-xs text-gray-500">[2023-10-26 10:00 AM]</span> New user registration! User "<span class="font-mono text-xs bg-gray-700 rounded px-1">jann.dier</span>" logged in.
+                            </p>
+                        </div>
+                        <!-- Log Item 5 -->
+                        <div class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-4 h-4 mr-2 mt-1 text-red-400 flex-shrink-0"></i>
+                            <p class="text-sm text-gray-300">
+                                <span class="text-xs text-gray-500">[2023-10-26 10:05 AM]</span> <span class="text-red-400">Error!</span> Generated
+                            </p>
+                        </div>
+                        <!-- Log Item 6 -->
+                        <div class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-4 h-4 mr-2 mt-1 text-yellow-400 flex-shrink-0"></i>
+                            <p class="text-sm text-gray-300">
+                                <span class="text-xs text-gray-500">[2023-10-26 10:30 AM]</span> Non-revenue topside API! User "<span class="font-mono text-xs bg-gray-700 rounded px-1">jdin.amil</span>" created/stormdoor re-internet.
+                            </p>
+                        </div>
+                        <!-- Add more logs for scrolling effect -->
+                        <div class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-4 h-4 mr-2 mt-1 text-green-400 flex-shrink-0"></i>
+                            <p class="text-sm text-gray-300">
+                                <span class="text-xs text-gray-500">[2023-10-26 11:00 AM]</span> Core configuration saved successfully by admin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. System Health Card (Span 2 rows on desktop) -->
+                <div class="glass-card p-6 rounded-xl row-span-2 col-span-1">
+                    <h2 class="text-xl font-semibold mb-6 text-white">System Health</h2>
+                    
+                    <div class="space-y-8">
+                        <!-- CPU Usage -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <p class="text-sm font-medium">CPU Usage</p>
+                                <span class="text-sm font-bold text-purple-400">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="h-2.5 rounded-full bg-purple-600" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Memory Usage -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <p class="text-sm font-medium">Memory</p>
+                                <span class="text-sm font-bold text-cyan-400">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="h-2.5 rounded-full bg-cyan-600" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Disk Usage -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <p class="text-sm font-medium">Disk Usage</p>
+                                <span class="text-sm font-bold text-orange-400">78%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="h-2.5 rounded-full bg-orange-500" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Pending Approvals Card -->
+                <div class="glass-card p-6 rounded-xl col-span-1 xl:col-span-2">
+                    <h2 class="text-xl font-semibold mb-6 text-white">Pending Approvals</h2>
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-700">
+                            <thead>
+                                <tr class="text-left text-xs font-medium uppercase tracking-wider text-gray-400">
+                                    <th class="py-3 px-4">Request</th>
+                                    <th class="py-3 px-4">User</th>
+                                    <th class="py-3 px-4 text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-800">
+                                <tr class="hover:bg-gray-700/50 transition duration-150">
+                                    <td class="py-4 px-4 text-sm font-medium whitespace-nowrap">New Model Deployment</td>
+                                    <td class="py-4 px-4 text-sm text-gray-400 whitespace-nowrap">Nem-Matal</td>
+                                    <td class="py-4 px-4 whitespace-nowrap text-center space-x-2">
+                                        <button class="bg-green-600 hover:bg-green-700 text-white font-semibold py-1 px-3 text-xs rounded-lg shadow-md transition duration-150">
+                                            Approve
+                                        </button>
+                                        <button class="bg-red-600 hover:bg-red-700 text-white font-semibold py-1 px-3 text-xs rounded-lg shadow-md transition duration-150">
+                                            Reject
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/50 transition duration-150">
+                                    <td class="py-4 px-4 text-sm font-medium whitespace-nowrap">Billing Tier Upgrade</td>
+                                    <td class="py-4 px-4 text-sm text-gray-400 whitespace-nowrap">Tana.dev</td>
+                                    <td class="py-4 px-4 whitespace-nowrap text-center space-x-2">
+                                        <button class="bg-green-600 hover:bg-green-700 text-white font-semibold py-1 px-3 text-xs rounded-lg shadow-md transition duration-150">
+                                            Approve
+                                        </button>
+                                        <button class="bg-red-600 hover:bg-red-700 text-white font-semibold py-1 px-3 text-xs rounded-lg shadow-md transition duration-150">
+                                            Reject
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Initialization Script -->
+<script src="script.js"></script>
+</body>
+</html>
+
