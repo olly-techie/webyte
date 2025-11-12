@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webyte AI- Login & Signup</title>
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <!---LOGO--->
+    <div class="logo">
+        <h1>Webyte AI</h1>
+      
+    </div>
+
+
+    
+  <div class="auth-container">
+<!---LOGIN--->
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <button class="auth-tab active" id="login-tab">SIGNUP</button>
+     </div>
+
+        <div class="auth-forms"> 
+        
+    <form id="login-form" class="auth-form">
+
+
+
+
+
+
+
+    <!---SIGNUP--->
+            <form id="signup-form" class="auth-form form-hidden">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-control" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-control" placeholder="Your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" placeholder="Create a password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" class="form-control" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-check" style="margin-bottom: 20px;">
+                    <input type="checkbox" id="terms" class="form-check-input" required>
+                    <label for="terms" class="form-check-label">
+                        I agree to the <a href="#" class="forgot-link">Terms of Service</a> and <a href="#" class="forgot-link">Privacy Policy</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-primary">Create Account</button>
+                
+
+                
+                <div class="form-footer">
+                    Already have an account? <a href="login.html" id="to-login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    
+</body>
+</html>
