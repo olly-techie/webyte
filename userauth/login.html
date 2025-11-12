@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webyte AI - Login</title>
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <!---LOGO--->
+    <div class="logo">
+        <h1>Webyte AI</h1>
+        <p>Your gateway to the next experience</p>
+    </div>
+
+
+    <!---LOGIN--->
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <button class="auth-tab active" id="login-tab">Login</button>
+     </div>
+
+        <div class="auth-forms">
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="Your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="Your password" required>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <div class="form-check">
+                        <input type="checkbox" id="remember-me" class="form-check-input">
+                        <label for="remember-me" class="form-check-label">Remember me</label>
+                    </div>
+   <a href="forgotpasswd.html" class="forgot-link">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn-primary">Login</button>
+                
+
+                <div class="form-footer">
+                    Don't have an account? <a href="signup.html" id="to-signup">Sign up</a>
+                </div>
+            </form>
+   <script src="auth.js"></script>
+    
+    
+</body>
+</html>
