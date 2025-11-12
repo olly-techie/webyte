@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Website Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="user-info">
+                <div class="avatar" id="userAvatar">JD</div>
+                <div class="user-details">
+                    <h1 id="userName">John Doe</h1>
+                    <span class="plan-badge" id="planBadge">Basic</span>
+                </div>
+            </div>
+            <div class="header-actions">
+              
+          <a href="../bot/index.html">
+                <button class="btn btn-primary" onclick="createWebsite()">+ New Website</button>
+          </a>
+          
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon">🌐</div>
+                </div>
+                <div class="stat-label">Total Websites</div>
+                <div class="stat-value" id="totalWebsites">5</div>
+                <div class="stat-subtext" id="websiteLimit">of 10 websites used</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="websiteProgress" style="width: 50%"></div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon">💾</div>
+                </div>
+   <!--             <div class="stat-label">Storage Used</div>
+                <div class="stat-value" id="storageUsed">2.4 GB</div>
+                <div class="stat-subtext" id="storageLimit">of 5 GB used</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="storageProgress" style="width: 48%"></div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon">👁️</div>
+                </div>
+                <div class="stat-label">Total Visitors</div>
+                <div class="stat-value" id="totalVisitors">12.5K</div>
+                <div class="stat-subtext">This month</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-icon">⚡</div>
+                </div>
+                <div class="stat-label">Active Sites</div>
+                <div class="stat-value" id="activeSites">3</div>
+                <div class="stat-subtext">Published & live</div>
+            </div>
+        </div>---->
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Projects</h2>
+                <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">View All</a>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-name">Portfolio Website</div>
+                            <div class="project-meta">Updated 2 hours ago</div>
+                        </div>
+                        <span class="project-status status-published">Published</span>
+                    </div>
+                    <div class="project-meta">1,234 visitors this week</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-name">E-commerce Store</div>
+                            <div class="project-meta">Updated yesterday</div>
+                        </div>
+                        <span class="project-status status-published">Published</span>
+                    </div>
+                    <div class="project-meta">3,456 visitors this week</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-name">Blog Template</div>
+                            <div class="project-meta">Updated 3 days ago</div>
+                        </div>
+                        <span class="project-status status-draft">Draft</span>
+                    </div>
+                    <div class="project-meta">Not published yet</div>
+                </div>
+            </div>
+        </div>
+
+ <!---       <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Quick Actions</h2>
+            </div>
+            <div class="quick-actions">
+                <a href="#" class="action-btn" onclick="createWebsite(); return false;">
+                    <div class="action-icon">➕</div>
+                    <div class="action-label">Create Website</div>
+                </a>
+                <a href="#" class="action-btn">
+                    <div class="action-icon">📊</div>
+                    <div class="action-label">View Analytics</div>
+                </a>
+                <a href="#" class="action-btn">
+                    <div class="action-icon">🎨</div>
+                    <div class="action-label">Browse Templates</div>
+                </a>
+                <a href="#" class="action-btn" onclick="upgradePlan(); return false;">
+                    <div class="action-icon">⭐</div>
+                    <div class="action-label">Upgrade Plan</div>
+                </a>
+            </div>
+        </div>
+    </div>------>
+
+    <script src="script.js"></script>
+</body>
+</html>
