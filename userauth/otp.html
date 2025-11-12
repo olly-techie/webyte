@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #444;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .otp-input-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .otp-input {
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            text-align: center;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .otp-input:focus {
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resend-otp {
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+        }
+
+        #resend-otp:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>OTP Verification</h1>
+        <p>Please enter the verification code we sent to your email.</p>
+
+        <div class="otp-input-container">
+            <input type="number" class="otp-input" maxlength="1">
+            <input type="number" class="otp-input" maxlength="1">
+            <input type="number" class="otp-input" maxlength="1">
+            <input type="number" class="otp-input" maxlength="1">
+            <input type="number" class="otp-input" maxlength="1">
+            <input type="number" class="otp-input" maxlength="1">
+        </div>
+
+        <button id="verify-button">Verify OTP</button>
+
+        <a href="#" id="resend-otp">Resend OTP</a>
+
+        <p id="error-message" class="error-message" style="display: none;"></p>
+    </div>
+
+    <script>
+        const otpInputs = document.querySelectorAll('.otp-input');
+        const verifyButton = document.getElementById('verify-button');
+        const resendOtpLink = document.getElementById('resend-otp');
+        const errorMessage = document.getElementById('error-message');
+
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                const value = e.target.value;
+                if (value.length === 1) {
+                    if (index < otpInputs.length - 1) {
+                        otpInputs[index + 1].focus();
+                    }
+                }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value.length === 0) {
+                    if (index > 0) {
+                        otpInputs[index - 1].focus();
+                    }
+                }
+            });
+        });
+
+        verifyButton.addEventListener('click', () => {
+            const otp = Array.from(otpInputs).map(input => input.value).join('');
+
+            //  Basic validation (replace with your actual verification logic)
+            if (otp.length === 6 && /^\d+$/.test(otp)) {
+                // Simulate successful verification
+                alert('OTP Verified Successfully!');
+                errorMessage.style.display = 'none'; // Hide any previous error
+                // Redirect or perform other actions after successful verification
+            } else {
+                errorMessage.textContent = 'Invalid OTP. Please enter a 6-digit number.';
+                errorMessage.style.display = 'block';
+            }
+        });
+
+        resendOtpLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Implement your resend OTP logic here (e.g., make an API call)
+            alert('OTP Resent!'); // Replace with actual resend logic
+        });
+    </script>
+
+</body>
+</html>
